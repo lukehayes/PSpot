@@ -13,17 +13,26 @@ function PSpot:initialize(width, height)
     self.elements = {}
 end
 
---- The main update() method
+--- The main update() method.
+--
 -- @param dt Delta time
 function PSpot:update(dt)
     -- TODO Implmement
 end
 
---- The main draw() method
+--- The main draw() method.
+--
 -- @return nil
 function PSpot:draw()
     -- TODO Implmement
 end
 
+
+--- Add a new UIElement to be rendered.
+--
+-- @param uielement The instance of UIElement to add.
+function PSpot:add(uielement)
+    table.insert(self.elements,  uielement)
+end
 
 return PSpot
