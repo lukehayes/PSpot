@@ -1,38 +1,74 @@
---- PSpot
--- @classmod PSpot
-local class = require('libs.middleclass')
+--- Main class in PSpot library
+-- @module PSpot
 
-local PSpot = class('PSpot')
+local class = require 'pspot.class'
 
---- Constructor
--- @param width The width of the game window
--- @param height The height of the game window
-function PSpot:initialize(width, height)
-    self.width = width
-    self.height = height
-    self.elements = {}
-end
+--- Pspot
+-- @table PSpot.
+-- @field elements All of the UIElements.
+local PSpot = {
+    elements = {}
+}
 
---- The main update() method.
---
--- @param dt Delta time
+--- Update
 function PSpot:update(dt)
-    -- TODO Implmement
+    -- TODO Implement event system here.
 end
 
---- The main draw() method.
---
--- @return nil
 function PSpot:draw()
-    -- TODO Implmement
+    for i=1,#self.elements,1 do
+        local elem = self.elements[i]
+
+        if(elem.name == 'Label') then
+            love.graphics.print(elem.text, elem.x, elem.y)
+        end
+    end
 end
 
+--[[============================================================================
+-- UIElement
+==============================================================================]]
 
---- Add a new UIElement to be rendered.
+--- Base table for all UIElements in PSpot.
 --
--- @param uielement The instance of UIElement to add.
-function PSpot:add(uielement)
-    table.insert(self.elements,  uielement)
+-- @function UIElement
+--
+-- @param x The x position.
+-- @param y The y position.
+function UIElement(x,y)
+    local x = x or 0
+    local y = y or 0
+    return {
+        x = x,
+        y = y,
+        name = "UIElement"
+    }
+end
+
+--[[============================================================================
+-- Label
+==============================================================================]]
+
+--- A simple text label.
+--
+-- @function Label
+--
+-- @param text The text of the label.
+-- @param x The x position.
+-- @param y The y position.
+function Label(text,x,y)
+
+    local o =  {
+        text = text,
+        name = "Label"
+    }
+
+    class:extends(o, UIElement(x,y))
+    
+    -- Add this UI element to PSpot.elements to be drawn.
+    table.insert(PSpot.elements, o)
+
+    return o
 end
 
 return PSpot
