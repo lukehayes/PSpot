@@ -52,32 +52,6 @@ function UIElement(x,y)
     }
 end
 
---[[============================================================================
--- Label
-==============================================================================]]
-
---- A simple text label.
---
--- @function Label
---
--- @param text The text of the label.
--- @param x The x position.
--- @param y The y position.
-function Label(text,x,y)
-
-    local o =  {
-        text = text,
-        name = "Label"
-    }
-
-    class:extends(o, UIElement(x,y))
-    
-    -- Add this UI element to PSpot.elements to be drawn.
-    table.insert(PSpot.elements, o)
-
-    return o
-end
-
 --- A simple button.
 --
 -- @function Button
