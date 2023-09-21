@@ -1,30 +1,32 @@
-local UIElement = require('pspot.element.UIElement')
-local PSpot = require 'pspot.PSpot'
+--- Label UI Element
+--
+-- @classmod Label
+--
 
-local label = {}
+local UIElement = require 'pspot.element.UIElement'
+local PSpot     = require 'pspot.PSpot'
+local Class     = require 'pspot.Class'
 
---[[============================================================================
--- Label
-==============================================================================]]
+local Label = {}
 
 --- A simple text label.
 --
--- @function Label
+-- @function Label:new
 --
 -- @param text The text of the label.
 -- @param x The x position.
 -- @param y The y position.
-function Label(text,x,y)
+function Label:new(text,x,y)
 
-    label.text = text
-    label.name = "Label"
+    self.text = text
+    self.name = "Label"
 
-    class:extends(label, UIElement(x,y))
+    Class:extends(self, UIElement(x,y))
 
     -- Add this UI element to PSpot.elements to be drawn.
-    table.insert(PSpot.elements, o)
+    table.insert(PSpot.elements, self)
 
-    return o
+    return self
 end
 
-return label
+return Label

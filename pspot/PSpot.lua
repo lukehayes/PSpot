@@ -1,7 +1,9 @@
---- Main class in PSpot library
+--- Main class in PSpot library.
+--
 -- @module PSpot
+--
 
-local class = require 'pspot.class'
+local Class = require 'pspot.Class'
 
 --- Pspot
 -- @table PSpot.
@@ -11,10 +13,13 @@ local PSpot = {
 }
 
 --- Update
+--
+-- @param dt Delta time.
 function PSpot:update(dt)
     -- TODO Implement event system here.
 end
 
+--- Draw all of the UI Elements
 function PSpot:draw()
     for i=1,#self.elements,1 do
         local e = self.elements[i]
@@ -32,54 +37,6 @@ function PSpot:draw()
     end
 end
 
---[[============================================================================
--- UIElement
-==============================================================================]]
 
---- Base table for all UIElements in PSpot.
---
--- @function UIElement
---
--- @param x The x position.
--- @param y The y position.
-function UIElement(x,y)
-    local x = x or 0
-    local y = y or 0
-    return {
-        x = x,
-        y = y,
-        name = "UIElement"
-    }
-end
-
---- A simple button.
---
--- @function Button
---
--- @param text The text of the button.
--- @param x The x position.
--- @param y The y position.
--- @param w The width of the button.
--- @param h The height of the button.
-function Button(text,x,y,w,h)
-
-    local w = w or 150
-    local h = h or 100
-
-    local o =  {
-        text = text,
-        w = w,
-        h = h,
-        style = 'fill',
-        name = "Button"
-    }
-
-    class:extends(o, UIElement(x,y))
-    
-    -- Add this UI element to PSpot.elements to be drawn.
-    table.insert(PSpot.elements, o)
-
-    return o
-end
 
 return PSpot
