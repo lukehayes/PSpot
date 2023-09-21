@@ -1,12 +1,9 @@
-local PSpot = require 'pspot.PSpot'
+local ui = require 'pspot.PSpot'
 local Label = require 'pspot.element.Label'
+local Button = require 'pspot.element.Button'
 
-ui = PSpot
-
-Button("Button",100,100,100,100)
-
-Label("Test Label", 200,200)
-
+local l = Label:new("Label", 100,400)
+local b = Button:new("Button", 100,400)
 
 function love.load()
 end
