@@ -33,17 +33,20 @@ function PSpot:draw()
 
         if(e.name == 'Label') then
             love.graphics.print(e.text, e.x, e.y)
-        end
 
-        if(e.name == 'Button') then
+        elseif(e.name == 'Button') then
+
             love.graphics.rectangle(e.style, e.x, e.y,e.w,e.h)
+
             love.graphics.setColor(
                 e.fg_color.r,
                 e.fg_color.g,
                 e.fg_color.b,
                 e.fg_color.a
             )
+
             love.graphics.print(e.text, e.x + e.w/2, e.y + e.h/2)
+
             love.graphics.setColor(
                 e.bg_color.r,
                 e.bg_color.g,
