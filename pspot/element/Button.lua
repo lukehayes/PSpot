@@ -31,7 +31,7 @@ function Button:new(text,x,y,w,h)
         name = "Button"
     }
 
-    Class:extends(self, UIElement(x,y))
+    setmetatable(self,  UIElement:new(x,y))
 
     -- Add this UI element to PSpot.elements to be drawn.
     table.insert(PSpot.elements, self)

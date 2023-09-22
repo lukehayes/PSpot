@@ -21,7 +21,7 @@ function Label:new(text,x,y)
     self.text = text
     self.name = "Label"
 
-    Class:extends(self, UIElement(x,y))
+    Class:extends(self, UIElement:new(x,y))
 
     -- Add this UI element to PSpot.elements to be drawn.
     table.insert(PSpot.elements, self)
