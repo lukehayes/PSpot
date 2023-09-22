@@ -20,8 +20,10 @@ function Label:new(text,x,y)
 
     self.text = text
     self.name = "Label"
+    self.x = x
+    self.y = x
 
-    Class:extends(self, UIElement:new(x,y))
+    setmetatable(self, {__index = UIElement:new(x,y)})
 
     -- Add this UI element to PSpot.elements to be drawn.
     table.insert(PSpot.elements, self)
