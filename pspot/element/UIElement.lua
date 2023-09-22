@@ -1,33 +1,29 @@
 --- UIElement
+--
 -- @classmod UIElement
-local class = require('libs.middleclass')
 
-local UIElement = class('UIElement')
+local PSpot     = require 'pspot.PSpot'
+local Class     = require 'pspot.Class'
 
---- Constructor
--- @param x The x position of the element
--- @param y The y position of the element
--- @param w The width of the element
--- @param h The height of the element
-function UIElement:initialize(x,y,w,h)
-    self.x = x or 0
-    self.y = y or 0
-    self.w = w or 100
-    self.h = h or 100
-    self.priority = 10
+local UIElement = {}
+
+--- A simple text label.
+--
+-- @function UIElement:new
+--
+-- @param x The x position.
+-- @param y The y position.
+function UIElement:new(x,y)
+
+    self.text = text
+    self.name = "UIElement"
+    self.x = x
+    self.y = y
+
+    -- Add this UI element to PSpot.elements to be drawn.
+    table.insert(PSpot.elements, self)
+
+    return self
 end
-
---- The main update() method - Abstract method so all UI elements should implement it.
--- @param dt Delta time
-function UIElement:update(dt)
-    print("UIElement:update() is abstract -> child class should implmement it!")
-end
-
---- The main draw() method - Abstract method so all UI elements should implement it.
--- @return nil
-function UIElement:draw()
-    print("UIElement:draw() is abstract -> child class should implmement it!")
-end
-
 
 return UIElement
