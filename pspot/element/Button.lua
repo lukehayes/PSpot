@@ -27,7 +27,7 @@ function Button:new(text,x,y,w,h)
         text = text,
         w = w,
         h = h,
-        style = 'fill',
+        style = 'line',
         name = "Button"
     }
 
