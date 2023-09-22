@@ -17,6 +17,8 @@ function UIElement:new(x,y)
 
     self.text = text
     self.name = "UIElement"
+    self.fg_color = {r=1,g=1,b=1,a=1}
+    self.bg_color = {r=0.5,g=0.5,b=0.5,a=1}
     self.x = x
     self.y = y
 
