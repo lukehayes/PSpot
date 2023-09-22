@@ -5,7 +5,11 @@
 local PSpot     = require 'pspot.PSpot'
 local Class     = require 'pspot.Class'
 
-local UIElement = {}
+local UIElement = {
+    __tostring = function()
+        return "UIElement"
+    end
+}
 
 --- A simple text label.
 --
