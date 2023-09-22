@@ -12,6 +12,13 @@ local PSpot = {
     elements = {}
 }
 
+--- Add a new UI Element.
+--
+-- @param elements The new UI Element
+function PSpot:addElement(element)
+    table.insert(self, element)
+end
+
 --- Update
 --
 -- @param dt Delta time.
