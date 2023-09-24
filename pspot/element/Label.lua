@@ -8,7 +8,6 @@ local PSpot     = require 'pspot.PSpot'
 local Class     = require 'pspot.Class'
 
 local Label = {}
-
 --- A simple text label.
 --
 -- @function Label:new
@@ -18,17 +17,21 @@ local Label = {}
 -- @param y The y position.
 function Label:new(text,x,y)
 
-    self.text = text
-    self.name = "Label"
-    self.x = x
-    self.y = y
+    local obj = {}
 
-    setmetatable(self, {__index = UIElement:new(x,y)})
+    obj.text = text
+    obj.name = "Label"
+    obj.x = x
+    obj.y = y
+
+    setmetatable(obj, {
+        __index = UIElement:new(x,y),
+    })
 
     -- Add this UI element to PSpot.elements to be drawn.
-    table.insert(PSpot.elements, self)
+    table.insert(PSpot.elements, obj)
 
-    return self
+    return obj
 end
 
 return Label
