@@ -16,7 +16,7 @@ local PSpot = {
 --
 -- @param elements The new UI Element
 function PSpot:addElement(element)
-    table.insert(self, element)
+    table.insert(self.elements, element)
 end
 
 --- Update
