@@ -21,7 +21,7 @@ function Label:new(text,x,y)
     self.text = text
     self.name = "Label"
     self.x = x
-    self.y = x
+    self.y = y
 
     setmetatable(self, {__index = UIElement:new(x,y)})
 
