@@ -26,6 +26,7 @@ function Label:new(text,x,y)
 
     setmetatable(obj, {
         __index = UIElement:new(x,y),
+        __tostring = function() return "Label" end
     })
 
     -- Add this UI element to PSpot.elements to be drawn.
