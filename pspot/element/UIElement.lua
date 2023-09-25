@@ -20,7 +20,7 @@ function UIElement:new(x,y)
     obj.text = text
     obj.name = "UIElement"
     obj.fg_color = {r=1,g=1,b=1,a=1}
-    obj.bg_color = {r=0.5,g=0.5,b=0.5,a=1}
+    obj.bg_color = {r=1,g=1,b=1,a=1}
     obj.x = x
     obj.y = y
 
