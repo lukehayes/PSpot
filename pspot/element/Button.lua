@@ -25,13 +25,13 @@ end
 -- @param h The height of the button.
 function Button:new(text,x,y,w,h)
 
-    local obj = {}
+    local obj  = {}
 
-    obj.text = text
-    obj.w = w or 200
-    obj.h = h or 100
-    obj.style = 'line'
-    obj.name = 'Button'
+    obj.text   = text
+    obj.width  = w or 200
+    obj.height = h or 100
+    obj.style  = 'line'
+    obj.name   = 'Button'
     obj.active = false
 
 
