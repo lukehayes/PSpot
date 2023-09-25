@@ -13,6 +13,20 @@ local PSpot = {
     elements = {}
 }
 
+
+function PSpot:new(w,h)
+
+    local obj   = {}
+    obj.width   = w
+    obj.height  = h
+    obj.widthOffset = obj.width / 2
+    obj.heightOffset = obj.height / 2
+
+    setmetatable(obj, {__index = PSpot})
+
+    return obj
+end
+
 --- Add a new UI Element.
 --
 -- @param elements The new UI Element
