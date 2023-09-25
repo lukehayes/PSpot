@@ -9,6 +9,11 @@ local Class     = require 'pspot.Class'
 
 local Button = {}
 
+function Button:hover()
+    -- TODO Implement button hover states.
+    print("Button Hovering")
+end
+
 --- A simple button.
 --
 -- @function Button
@@ -27,6 +32,7 @@ function Button:new(text,x,y,w,h)
     obj.h = h or 100
     obj.style = 'line'
     obj.name = 'Button'
+    obj.active = false
 
 
     setmetatable(obj, {
