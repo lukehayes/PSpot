@@ -20,18 +20,24 @@ local Button = {}
 -- @param h The height of the button.
 function Button:new(text,x,y,w,h)
 
-    self.text = text
-    self.w = w or 200
-    self.h = h or 130
-    self.style = 'line'
-    self.name = 'Button'
+    local obj = {}
 
-    setmetatable(self, {__index = UIElement:new(x,y)})
+    obj.text = text
+    obj.w = w or 200
+    obj.h = h or 100
+    obj.style = 'line'
+    obj.name = 'Button'
+
+
+    setmetatable(obj, {
+        __index = UIElement:new(x,y),
+        __tostring = function() return "Button" end
+    })
 
     -- Add this UI element to PSpot.elements to be drawn.
-    table.insert(PSpot.elements, self)
+    table.insert(PSpot.elements, obj)
 
-    return self
+    return obj
 end
 
 return Button
