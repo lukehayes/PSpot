@@ -29,9 +29,6 @@ function Label:new(text,x,y)
         __tostring = function() return "Label" end
     })
 
-    -- Add this UI element to PSpot.elements to be drawn.
-    table.insert(PSpot.elements, obj)
-
     return obj
 end
 

@@ -29,9 +29,6 @@ function UIElement:new(x,y)
         __tostring = function() return "UIElement" end
     })
 
-    -- Add this UI element to PSpot.elements to be drawn.
-    table.insert(PSpot.elements, obj)
-
     return obj
 end
 
