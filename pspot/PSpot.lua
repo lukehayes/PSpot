@@ -9,6 +9,7 @@ local Class = require 'pspot.Class'
 -- @table PSpot.
 -- @field elements All of the UIElements.
 local PSpot = {
+    font = love.graphics.newFont("assets/Mozart.ttf", 20),
     elements = {}
 }
 
