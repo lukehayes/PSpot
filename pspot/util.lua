@@ -1,15 +1,20 @@
 --- Class
 -- @module Class
 --
-local class = {}
+local util = {}
 
---- Extend a child table - wrapper for setatable(child, {__index = parent}})
---
--- @param child The child class that should have a parent.
--- @param parent The parent class the child should inherit.
-function class:extends(child, parent)
-    setmetatable(child, {__index = parent})
-    return child
+function util:collides(x1,y1,w1,h1,x2,y2,w2,h2)
+    -- TODO Implement
+    print("Collides")
+    print(x1,y1,w1,h1,x2,y2,w2,h2)
+    print("------------------")
 end
 
-return class
+function util:collidesObject(a,b)
+    -- TODO Implement
+    print("Collides Object")
+    print(a.x,a.y,a.w,a.h,b.x,b.y,b.w,b.h)
+    print("------------------")
+end
+
+return utl
