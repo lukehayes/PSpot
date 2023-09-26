@@ -51,7 +51,7 @@ function PSpot:draw()
 
         elseif(e.name == 'Button') then
 
-            love.graphics.rectangle(e.style, e.x, e.y,e.w,e.h)
+            love.graphics.rectangle(e.style, e.x, e.y,e.width,e.height)
 
             love.graphics.setColor(
                 e.fg_color.r,
@@ -60,7 +60,7 @@ function PSpot:draw()
                 e.fg_color.a
             )
 
-            love.graphics.print(e.text, e.x + e.w/2, e.y + e.h/2)
+            love.graphics.print(e.text, e.x + e.width/2, e.y + e.height/2)
 
             love.graphics.setColor(
                 e.bg_color.r,
