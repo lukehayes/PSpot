@@ -27,9 +27,11 @@ function Label:new(text,x,y)
     obj.bg_color = {r=1,g=0,b=1,a=1}
 
     setmetatable(obj, {
-        __index = UIElement:new(x,y),
+        __index = Label,
         __tostring = function() return "Label" end
     })
+
+    setmetatable(Label, {__index = UIElement:new(x,y)})
 
     return obj
 end
