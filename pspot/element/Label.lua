@@ -23,6 +23,8 @@ function Label:new(text,x,y)
     obj.name = "Label"
     obj.x = x
     obj.y = y
+    obj.fg_color = {r=1,g=0,b=1,a=1}
+    obj.bg_color = {r=1,g=0,b=1,a=1}
 
     setmetatable(obj, {
         __index = UIElement:new(x,y),
