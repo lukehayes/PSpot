@@ -12,4 +12,9 @@ function class:extends(child, parent)
     return child
 end
 
+function class.inherits(child, parent, mt)
+    setmetatable(child, {__index = parent})
+    setmetatable(parent, {__index = mt})
+end
+
 return class
