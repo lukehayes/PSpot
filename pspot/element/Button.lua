@@ -36,9 +36,11 @@ function Button:new(text,x,y,w,h)
 
 
     setmetatable(obj, {
-        __index = UIElement:new(x,y),
-        __tostring = function() return "Button" end
+        __index = Button,
+        __tostring = "Button Element"
     })
+
+    setmetatable(Button, {__index = UIElement:new(x,y)})
 
     return obj
 end
