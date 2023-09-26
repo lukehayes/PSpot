@@ -9,7 +9,7 @@ local Class = require 'pspot.Class'
 -- @table PSpot.
 -- @field elements All of the UIElements.
 local PSpot = {
-    font = love.graphics.newFont("assets/Mozart.ttf", 20),
+    font = love.graphics.newFont("assets/Mozart.ttf", 10),
     elements = {}
 }
 
@@ -17,10 +17,12 @@ local PSpot = {
 function PSpot:new(w,h)
 
     local obj   = {}
-    obj.width   = w
-    obj.height  = h
+    obj.width   = w or 800
+    obj.height  = h or 600
     obj.widthOffset = obj.width / 2
     obj.heightOffset = obj.height / 2
+    obj.mx = 0
+    obj.my = 0
 
     setmetatable(obj, {__index = PSpot})
 
@@ -39,6 +41,7 @@ end
 -- @param dt Delta time.
 function PSpot:update(dt)
     -- TODO Implement event system here.
+    print("Mouse ", self.mx,self.my)
 end
 
 --- Draw all of the UI Elements
