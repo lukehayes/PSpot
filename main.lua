@@ -8,6 +8,9 @@ pspot:addElement(b)
 local l = Label:new("Label", 100,400)
 local b = Button:new("Button", 100,400)
 
+pspot:addElement(l)
+pspot:addElement(b)
+
 function love.load()
 end
 
