@@ -19,8 +19,8 @@ function UIElement:new(x,y)
 
     obj.text = text
     obj.name = "UIElement"
-    obj.fg_color = {r=1,g=1,b=1,a=1}
-    obj.bg_color = {r=1,g=1,b=1,a=1}
+    obj.fg_color = {r=1,g=0,b=1,a=1}
+    obj.bg_color = {r=1,g=0,b=1,a=1}
     obj.x = x
     obj.y = y
 

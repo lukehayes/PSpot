@@ -33,10 +33,12 @@ function Button:new(text,x,y,w,h)
     obj.style  = 'line'
     obj.name   = 'Button'
     obj.active = false
+    obj.fg_color = {r=0,g=1,b=0,a=1}
+    obj.bg_color = {r=0,g=1,b=0,a=1}
 
 
     setmetatable(obj, {
-        __index = Button,
+        __index = self,
         __tostring = "Button Element"
     })
 
